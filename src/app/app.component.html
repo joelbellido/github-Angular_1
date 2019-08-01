@@ -1,0 +1,138 @@
+
+<div class="example-container">
+
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+      <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+    </button>
+
+    <h1 class="example-app-name">DOTICA-APP</h1>
+
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/perfil">
+        <mat-icon>account_box</mat-icon>
+        <span>Mi Perfil</span>
+      </button>
+      <button mat-menu-item (click)="sidenav.opened = false">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Cerrar Sesión</span>
+      </button>
+    </mat-menu>
+
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #sidenav style="width: 225px">
+      <img src="assets/image4.png" width="200" style="margin-left: 5px">
+
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/buscar" style="cursor: pointer">
+        <mat-icon>search</mat-icon>
+        <span>Buscar</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/consulta" style="cursor: pointer">
+        <mat-icon>insert_drive_file</mat-icon>
+        <span>Registrar</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/consulta-especial" style="cursor: pointer">
+        <mat-icon>insert_drive_file</mat-icon>
+        <span>Registrar E.</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/ticket" style="cursor: pointer">
+        <mat-icon>receipt</mat-icon>
+        <span>Ticket</span> 
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/ticket" style="cursor: pointer">
+        <mat-icon>receipt</mat-icon>
+        <span>Solicitud</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/tipo" style="cursor: pointer">
+        <mat-icon>receipt</mat-icon>
+        <span>Tipo Solicitud</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/tipoentidad" style="cursor: pointer">
+        <mat-icon>receipt</mat-icon>
+        <span>Tipo Entidad</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/proveedor-cliente" style="cursor: pointer">
+        <mat-icon>work</mat-icon>
+        <span>Proveedor Cliente</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/cliente" style="cursor: pointer">
+        <mat-icon>assignment_ind</mat-icon>
+        <span>Cliente</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/ticket" style="cursor: pointer">
+        <mat-icon>assignment_ind</mat-icon>
+        <span>Contactos</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/buscaproducto" style="cursor: pointer">
+        <mat-icon>star</mat-icon>
+        <span>Buscar Producto</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/producto" style="cursor: pointer">
+        <mat-icon>star</mat-icon>
+        <span>Registra Producto</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/tipoproducto" style="cursor: pointer">
+        <mat-icon>star</mat-icon>
+        <span>Tipo Producto</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/proveedorproducto" style="cursor: pointer">
+        <mat-icon>star</mat-icon>
+        <span>Proveedor Producto</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/insumo" style="cursor: pointer">
+        <mat-icon>star</mat-icon>
+        <span>Insumo</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/marca" style="cursor: pointer">
+        <mat-icon>star</mat-icon>
+        <span>Marca</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/proveedorinsumo" style="cursor: pointer">
+        <mat-icon>star</mat-icon>
+        <span>Proveedor Insumo</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/colaborador" style="cursor: pointer">
+        <mat-icon>people</mat-icon>
+        <span>Colaborador</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/reporte" style="cursor: pointer">
+        <mat-icon>assessment</mat-icon>
+        <span>Reportes</span>
+      </button>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+</div>
+
